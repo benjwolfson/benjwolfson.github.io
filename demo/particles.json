@@ -1,7 +1,7 @@
 {
   "particles": {
     "number": {
-      "value": 66,
+      "value": 80,
       "density": {
         "enable": true,
         "value_area": 800
@@ -26,7 +26,7 @@
       }
     },
     "opacity": {
-      "value": 0.49716301422833176,
+      "value": 0.5,
       "random": false,
       "anim": {
         "enable": false,
@@ -50,16 +50,15 @@
       "distance": 150,
       "color": "#ffffff",
       "opacity": 0.4,
-      "width": 4
+      "width": 1
     },
     "move": {
       "enable": true,
-      "speed": 6,
+      "speed": 3.2,
       "direction": "none",
       "random": false,
       "straight": false,
       "out_mode": "out",
-      "bounce": false,
       "attract": {
         "enable": false,
         "rotateX": 600,
@@ -72,7 +71,7 @@
     "events": {
       "onhover": {
         "enable": true,
-        "mode": "bubble"
+        "mode": "repulse"
       },
       "onclick": {
         "enable": true,
@@ -82,21 +81,20 @@
     },
     "modes": {
       "grab": {
-        "distance": 239.76023976023976,
+        "distance": 400,
         "line_linked": {
           "opacity": 1
         }
       },
       "bubble": {
-        "distance": 131.86813186813188,
-        "size": 39.96003996003996,
+        "distance": 400,
+        "size": 40,
         "duration": 2,
-        "opacity": 0.27172827172827174,
+        "opacity": 8,
         "speed": 3
       },
       "repulse": {
-        "distance": 200,
-        "duration": 0.4
+        "distance": 200
       },
       "push": {
         "particles_nb": 4
@@ -106,5 +104,13 @@
       }
     }
   },
-  "retina_detect": true
+  "retina_detect": true,
+  "config_demo": {
+    "hide_card": false,
+    "background_color": "#b61924",
+    "background_image": "",
+    "background_position": "50% 50%",
+    "background_repeat": "no-repeat",
+    "background_size": "cover"
+  }
 }
