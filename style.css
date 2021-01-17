@@ -44,15 +44,34 @@ body {
 .heading h1 {
     color: white;
     font-family: 'Helvetica Neue';
+    font-weight: bolder;
     font-size: 70px;
 }
 .heading h3 {
     color: white;
-    top: 35%;
+    vertical-align:auto;
+    margin-top: 1em;
+    width: 100%;
     font-family: 'Helvetica Neue';
-    font-style: inherit;
+    font-weight: 350;
     font-size: 20px;
 }
+.avatar {
+    transition: all .4s ease;
+    vertical-align:auto;
+    text-align: center;
+    margin-right:20px;
+    margin-top: 2em;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: #ffffff;
+}
+
+.avatar:hover {
+    background:#b6b6b6
+}
+
 #particles-js {
     background: #6622b4;
     height: 100vh;
