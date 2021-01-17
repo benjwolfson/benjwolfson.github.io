@@ -11,12 +11,12 @@ body {
     width: 100%;
 }
 .heading h1 {
-    color: wheat;
+    color: white;
     font-family: 'Helvetica Neue';
     font-size: 70px;
 }
 .heading h3 {
-    color: wheat;
+    color: white;
     font-family: 'Helvetica Neue';
     font-style: inherit;
     font-size: 20px;
