@@ -1,53 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head onselectstart="return false">
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-FECLJ6G6NP"></script>
-        <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FECLJ6G6NP"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    
+    gtag('config', 'G-FECLJ6G6NP');
+    </script>
+    
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta name="viewport"                content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="theme-color"             content="#000000">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="msapplication-config"    content="http://www.fabiolamanna.it/assets/favicons/browserconfig.xml">
+    
+    <!-- Preload the fonts -->
+    <link rel="preload" href="assets/css/fonts/3dac71eb-afa7-4c80-97f0-599202772905.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="assets/css/fonts/5b1fbd62-45dc-4433-a7df-a2b24a146411.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="assets/css/fonts/531c5a28-5575-4f58-96d4-a80f7b702d7b.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="assets/css/fonts/dd7814bd-8abf-46c5-a4be-db0977de2cca.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    
+    <!-- Manifest site -->
+    <link rel="manifest" href="assets/favicons/site.webmanifest">
 
-        gtag('config', 'G-FECLJ6G6NP');
-        </script>
-        <title>Ben Wolfson</title>
-        <link rel="stylesheet" href="/css/style.css"/>
-        <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
-        <link rel="manifest" href="/img/favicon/site.webmanifest">
-    </head>
+    <!-- Page Description -->
+    <meta name="description" content="Welcome! I'm Ben, a computer science undergrad at Georgia Tech. This is my personal site where I showcase the cool stuff I've worked on.">
 
-    <body onselectstart="return false">
-        <!-- Particles.js div -->
-        <div id="particles-js">
-            <div class ="heading">
+    <!-- Page Title -->
+    <title>Ben Wolfson</title>
+        
+    <!-- Favicons Icons -->  
+    <link rel="apple-touch-icon" href="assets/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon"             href="assets/favicons/favicon-32x32.png"    sizes="32x32" type="image/png">
+    <link rel="icon"             href="assets/favicons/favicon-16x16.png"    sizes="16x16" type="image/png">
+    <link rel="mask-icon"        href="assets/favicons/safari-pinned-tab.svg" color="#23372d">
+    <link rel="shortcut icon"    href="assets/favicons/favicon.ico">
+    
+
+    <!-- Stylesheet -->
+    <link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body class="home">
+    <section class="intro">
+        <div id="particles">
+            <div class="heading">
                 <h1 onselectstart="return false">Ben Wolfson</h1>
-                <h3 onselectstart="return false">
-                    Developer, Designer, Student.
+                <h3 onselectstart="return false"><span>
+                    Developer, Designer, Student.</span>
                 </h3>
                 <h4>
                     <p onselectstart="return false">
                         <a href="https://www.linkedin.com/in/benjwolfson/">
-                            <img src="/img/linkedin.svg" alt="Avatar" class="avatar">
+                            <img src="assets/icons/linkedin.svg" alt="Avatar" class="avatar">
                         </a>
                         <a href="https://github.com/benjwolfson">
-                            <img src="/img/github.svg" alt="Avatar" class="avatar">
+                            <img src="assets/icons/github.svg" alt="Avatar" class="avatar">
                         </a>
                         <a href="https://instagram.com/benjwolfson">
-                            <img src="/img/instagram.svg" alt="Avatar" class="avatar">
+                            <img src="assets/icons/instagram.svg" alt="Avatar" class="avatar">
                     </p>              
                 </h4>
             </div>
         </div>
+    </section><main>
 
-        <!-- Import Particles.js and app.js files -->
+    <!-- Bio Block -->
+    <section class="bio">
+        <h1 class="bio-title">
+            <span style=font-weight:600>I'm Ben.<br></span>
+            <span style=font-weight:600;background-color:rgb(255,231,231)>I like coding, designing, and investing.</span>
+        </h1>
+            <div class="bio-content">
+                <p><span>Right now I'm studying computer science and business at <span style=font-weight:600>Georgia Tech</span>,
+                    where I concentrate in 
+                    <span style=font-weight:600>human-computer interaction</span> and 
+                    <span style=font-weight:600>artificial intelligence.</span></span></p><br>
+                <!--<p>I'm motivated by building things that have impact. I also love playing saxophone, fitness, and ice cream.</p>-->
+                <p>You can find me on <a href="https://linkedin.com/in/benjwolfson" rel="noopener noreferrer" target="_blank">LinkedIn</a>, <a href="https://github.com/benjwolfson" rel="noopener noreferrer" target="_blank">GitHub</a>, and <a href="https://www.instagram.com/benjwolfson" rel="noopener noreferrer" target="_blank">Instagram</a>.</p>
+                <!--<p>Here is my <a href="" rel="noopener noreferrer" target="_blank">Resume</a>.</p></div>-->
+    </section>
 
-        <script src= 
-        "particles.js"> 
-        </script> 
-        <script src= 
-        "/demo/js/app.js"> 
-        </script> 
-    </body>
+        <section class="portfolio">
+        <h1 class="portfolio-title"><span style=font-weight:600>Check out some of my work:</span></h1>
+        <div class="portfolio-grid">
+        
+                    <figure class="project">
+    <a class='project-link' href='' target='_blank' data-title='View Project' style="padding-bottom: 100% ">
+        <img class="project-image" src="media/pages/home/KeyDrop/KeyDrop.png" srcset="media/pages/home/KeyDrop/KeyDrop.png 1x, media/pages/home/KeyDrop/KeyDrop.png 2x" alt="KeyDrop">
+    </a>
+    <figcaption class="project-caption">
+        <h2 class="project-title">KeyDrop</h2>
+        <p>Using Facebook Marketplace to rent out your apartment sucks.
+            Buyers flake, and you usually end up selling for a less than ideal price.
+            Enter KeyDrop: a peer-to-peer subleasing marketplace for students.
+            You can list your place for potential subletters, or use the platform to find a place to stay for the semester.
+            The best part?
+            Payments are integrated, so you don't have to worry about collecting.
+        </p>    </figcaption>
+</figure>                    <figure class="project">
+    <a class='project-link' href='https://saketshirsath.github.io/cv.github.io/' target='_blank' data-title='View Project' style="padding-bottom: 56.3% ">
+        <img class="project-image" src="media/pages/home/Weightlifting/openpose.jpg" srcset="media/pages/home/Weightlifting/openpose.jpg 1x,media/pages/home/Weightlifting/openpose.jpg 2x" alt="Weightlifting">
+    </a>
+    <figcaption class="project-caption">
+        <h2 class="project-title">AI Weightlifting Trainer</h2>
+        <p>Resistance training is an essential component to a good exercise regime.
+            However, lifting weights can actually be pretty harmful if done incorrectly. Just ask me:
+            in 2017, I fractured one of my vertebrae by deadlifting. In the COVID era, hiring an actual trainer for your home gym
+            might be a bit impractical—and expensive too. That got me wondering… what if phones could use computer vision and machine learning to analyze form instead?
+        </p>    </figcaption>
+</figure>                    <figure class="project">
+    <a class='project-link' href='downloads/ig-extraversion-loneliness.pdf' target='_blank' data-title='View Project' style="padding-bottom: 45.10101010101% ">
+        <img class="project-image" src="media/pages/home/hci/network2.jpg" srcset="media/pages/home/hci/network2.jpg 1x,media/pages/home/hci/network2.jpg 2x" alt="HCI">
+    </a>
+    <figcaption class="project-caption">
+        <h2 class="project-title">HCI Research</h2>
+        <p>“Bringing the world closer together” is Facebook’s alleged mission statement—but how much truth does this line actually hold? As part of my HCI curriculum, I was given the opportunity to design and run my own study using Georgia Tech’s introductory psychology students as subjects. In order to understand Instagram’s emotional impact on college students, our team designed a study to explore different usage patterns and their effects on feelings of loneliness. Our findings suggest that incentivizing certain active platform interactions can have measurable positive impacts on user connectedness.</p>    </figcaption>
+</figure>                    <figure class="project">
+    <a class='project-link' href='' target='_blank' data-title='View Project' style="padding-bottom: 100.32230738201% ">
+        <img class="project-image" src="media/pages/home/Electronics/CircuitPreview.png" srcset="media/pages/home/Electronics/CircuitPreview.png 1x, media/pages/home/Electronics/CircuitPreview.png 2x" alt="CircuitPreview">
+    </a>
+    <figcaption class="project-caption">
+        <h2 class="project-title">Wireless Energy Transfer</h2>
+        <p>Inspired by Nikola Tesla, I became obsessed with induction and Tesla coils.</p>    </figcaption>
+</figure>                    <figure class="project">
+    <a class='project-link' href='downloads/Ben-Wolfson-APPLEvFBI.pdf' target='_blank' data-title='View Project' style="padding-bottom: 91.154118689105% ">
+        <img class="project-image" src="media/pages/home/ethics/pandorasiphone.png" srcset="media/pages/home/ethics/pandorasiphone.png 1x,media/pages/home/ethics/pandorasiphone.png 2x" alt="Ethics">
+    </a>
+    <figcaption class="project-caption">
+        <h2 class="project-title">Ethical Case Study: Apple v. FBI</h2>
+        <p>Apple’s refusal to comply with 2016 FBI-mandated court orders to decrypt a terrorist’s phone sparked a seemingly inconsolable clash between principles of national security and individual rights. It has also led to debate over what a tech giant’s corporate social responsibility is in the modern world, where data has become increasingly commodified.</p>    </figcaption>
+</figure>                    <figure class="project">
+    <a class='project-link' href='' target='_blank' data-title='View Project' style="padding-bottom: 65.228758169935% ">
+        <img class="project-image" src="media/pages/home/Typing/HHKB_3_hybrid_white_blank.jpg" srcset="media/pages/home/Typing/HHKB_3_hybrid_white_blank.jpg 1x,media/pages/home/Typing/HHKB_3_hybrid_white_blank.jpg 2x" alt="Typing">
+    </a>
+    <figcaption class="project-caption">
+        <h2 class="project-title">Typing</h2>
+        <p>I started competitively speed typing in 2013. Since then, I've never looked back. Let me show you what the journey's been like.</p>    </figcaption>
+</figure>        
+        </div>
+    </section>
+    </main>    <footer class="footer">
+        <div id="particles2"></div>
+        <div class="inner">
+                <img src="assets/icons/benjwolfson-logo-clear.png" alt="Benjwolfson Logo" style="width: 150px;height:150px"><br><br>
+                <small style=color:white>&copy 2021 by Ben Wolfson
+            </div>
+        </div>
+    </footer>
+    <script src="assets/js/particles.min.js"></script>    <script src="assets/js/main.min.js"></script></body>
 </html>
