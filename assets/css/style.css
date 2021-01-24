@@ -341,7 +341,7 @@ main {
 }
 
 .project-link:hover::after {
-	opacity: 0.5
+	opacity: 0.7
 }
 
 .project-image {
@@ -387,7 +387,7 @@ main {
 .heading h3 {
     color: white;
     vertical-align:auto;
-    margin-top: auto;
+    margin-top: 0.5em;
     width: 100%;
     font-family: 'Poppins';
 	font-weight: 400;
@@ -397,16 +397,44 @@ main {
     transition: all .4s ease;
     vertical-align:auto;
     text-align: center;
-    margin-right:20px;
     margin-top: 2em;
     width: 60px;
     height: 60px;
     border-radius: 13px;
     background: #ffffff;
 }
-
+.avatarmid {
+	transition: all .4s ease;
+    vertical-align:auto;
+    text-align: center;
+    margin-top: 2em;
+    width: 60px;
+    height: 60px;
+    border-radius: 13px;
+    background: #ffffff;
+	margin-left: 20px;
+	margin-right: 20px;
+}
 .avatar:hover {
     background:#b6b6b6
+}
+.avatarmid:hover {
+    background:#b6b6b6
+}
+
+.button {
+	transition: all .4s ease;
+	vertical-align: auto;
+	text-align: center;
+	margin-top: 2em;
+	width: 300px;
+	height: 60px;
+	border-radius: 20px;
+	background: white;
+}
+
+.button:hover {
+	background: #b6b6b6
 }
 
 .body highlightme {
