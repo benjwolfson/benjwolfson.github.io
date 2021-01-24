@@ -11,18 +11,53 @@
     gtag('config', 'G-FECLJ6G6NP');
     </script>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        // Select all links with hashes
+        $('a[href*="#"]')
+        // Remove links that don't actually link to anything
+        .not('[href="#"]')
+        .not('[href="#0"]')
+        .click(function(event) {
+            // On-page links
+            if (
+            location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+            && 
+            location.hostname == this.hostname
+            ) {
+            // Figure out element to scroll to
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+            // Does a scroll target exist?
+            if (target.length) {
+                // Only prevent default if animation is actually gonna happen
+                event.preventDefault();
+                $('html, body').animate({
+                scrollTop: target.offset().top
+                }, 500, function() {
+                // Callback after animation
+                // Must change focus!
+                var $target = $(target);
+                $target.focus();
+                if ($target.is(":focus")) { // Checking if the target was focused
+                    return false;
+                } else {
+                    $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+                    $target.focus(); // Set focus again
+                };
+                });
+            }
+            }
+        });
+    </script>
+
     <!-- Meta Tags -->
     <meta charset="utf-8">
     <meta name="viewport"                content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta name="theme-color"             content="#000000">
     <meta name="msapplication-TileColor" content="#000000">
-    <meta name="msapplication-config"    content="http://www.fabiolamanna.it/assets/favicons/browserconfig.xml">
     
     <!-- Preload the fonts -->
-    <link rel="preload" href="assets/css/fonts/3dac71eb-afa7-4c80-97f0-599202772905.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="assets/css/fonts/5b1fbd62-45dc-4433-a7df-a2b24a146411.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="assets/css/fonts/531c5a28-5575-4f58-96d4-a80f7b702d7b.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="assets/css/fonts/dd7814bd-8abf-46c5-a4be-db0977de2cca.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     
     <!-- Manifest site -->
     <link rel="manifest" href="assets/favicons/site.webmanifest">
@@ -78,8 +113,10 @@
     <!-- Bio Block -->
     <section class="bio" id="bio">
         <h1 class="bio-title">
-            <span style=font-weight:600>I'm Ben.<br></span>
-            <span style=font-weight:600;background-color:rgb(255,231,231)>I like coding, designing, and investing.</span>
+            <span>I'm Ben.</span><br>
+        </h1>
+        <h1 class="highlightme">
+            <span>I like coding, designing, and investing.</span>
         </h1>
             <div class="bio-content">
                 <p><span>Right now I'm studying computer science and business at <span style=font-weight:600>Georgia Tech</span>,
