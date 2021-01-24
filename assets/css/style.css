@@ -30,7 +30,7 @@ p {
 
 @media (max-width: 700px) {
 	.bio-title {
-		font-size: 3.2rem
+		font-size: 3.2rem;
 	}
 }
 
@@ -111,6 +111,7 @@ main {
 	margin: auto;
 	padding: 5.8rem
 }
+
 
 #particles {
 	position: absolute;
@@ -397,6 +398,13 @@ main {
     font-weight: 700;
     font-size: 60px;
 }
+
+@media (max-width: 700px) {
+	.intro h1 {
+		top: 20%;
+	}
+}
+
 .heading h3 {
     color: white;
     vertical-align:auto;
