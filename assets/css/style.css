@@ -172,7 +172,7 @@ main {
 	color: currentColor
 }
 
-.bio #down {
+.bio #bio {
 	position: absolute;
 }
 
@@ -197,8 +197,8 @@ main {
 		margin: 0;
 		width: 100%
 	}
-	.intro h1 {
-		width: 100;
+	h1 {
+		width: 100%;
 	}
 }
 
