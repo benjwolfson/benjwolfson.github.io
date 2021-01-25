@@ -16,25 +16,19 @@
         $(document).ready(function(){
           // Add smooth scrolling to all links
           $("a").on('click', function(event) {
-        
-            // Make sure this.hash has a value before overriding default behavior
+
             if (this.hash !== "") {
-              // Prevent default anchor click behavior
+
               event.preventDefault();
-        
-              // Store hash
+
               var hash = this.hash;
-        
-              // Using jQuery's animate() method to add smooth page scroll
-              // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+
               $('html, body').animate({
                 scrollTop: $(hash).offset().top
-              }, 700, function(){
-           
-                // Add hash (#) to URL when done scrolling (default click behavior)
+              }, 500, function(){
                 window.location.hash = hash;
               });
-            } // End if
+            }
           });
         });
     </script>
@@ -107,10 +101,20 @@
             <span>I like coding, designing, and investing.</span>
         </h1>
             <div class="bio-content">
-                <p><span>Right now I'm studying computer science and business at <span style=font-weight:600>Georgia Tech</span>,
-                    where I concentrate in 
-                    <span style=font-weight:600>human-computer interaction</span> and 
-                    <span style=font-weight:600>artificial intelligence.</span></span></p><br>
+                <p><span>I study computer science and business at <span style=font-weight:600>Georgia Tech</span>,
+                    concentrating in human-computer interaction and artificial intelligence. I'm passionate about 
+                    <span style=font-weight:600>technology,</span>
+                    <span style=font-weight:600>fitness,</span>
+                    <span style=font-weight:600>saxophone,</span>
+                    and <span style=font-weight:600>ice cream</span>. I like to combine these areas whenever possible.</span></p>
+                     Over the last few years I've refined my business acumen through involvement in my school’s $1.7
+                     million investments committee, becoming the youngest Sector Head ever in the organization. I spent a lot
+                     of time researching tech companies and their products, understanding those products in the context
+                     of their users, and ultimately figuring out which ones to invest in—all while guiding a team
+                     of 15 analysts to become technologists and investors. <br></p>
+                <p>
+                    Now, I'm taking that knowledge and applying it towards entrepreneurship with KeyDrop. Our team's vision is to solve the student subletting problem.
+                </p>
                 <!--<p>I'm motivated by building things that have impact. I also love playing saxophone, fitness, and ice cream.</p>-->
                 <p>You can find me on <a href="https://linkedin.com/in/benjwolfson" rel="noopener noreferrer" target="_blank">LinkedIn</a>, <a href="https://github.com/benjwolfson" rel="noopener noreferrer" target="_blank">GitHub</a>, and <a href="https://www.instagram.com/benjwolfson" rel="noopener noreferrer" target="_blank">Instagram</a>.</p>
                 <!--<p>Here is my <a href="" rel="noopener noreferrer" target="_blank">Resume</a>.</p></div>-->
@@ -121,7 +125,7 @@
         <div class="portfolio-grid">
         
                     <figure class="project">
-    <a class='project-link' href='' target='_blank' data-title='View Project' style="padding-bottom: 100% ">
+    <a class='project-link' href='' target='_self' data-title='View Project' style="padding-bottom: 100% ">
         <img class="project-image" src="media/pages/home/KeyDrop/KeyDrop.png" srcset="media/pages/home/KeyDrop/KeyDrop.png 1x, media/pages/home/KeyDrop/KeyDrop.png 2x" alt="KeyDrop">
     </a>
     <figcaption class="project-caption">
@@ -145,28 +149,28 @@
             might be a bit impractical—and expensive. That got me wondering… what if phones could use computer vision and machine learning to analyze form instead?
         </p>    </figcaption>
 </figure>                    <figure class="project">
-    <a class='project-link' href='downloads/ig-extraversion-loneliness.pdf' target='_blank' data-title='View Project' style="padding-bottom: 45.10101010101% ">
+    <a class='project-link' href='downloads/ig-extraversion-loneliness.pdf' target='_blank' data-title='Download Paper' style="padding-bottom: 45.10101010101% ">
         <img class="project-image" src="media/pages/home/hci/network2.jpg" srcset="media/pages/home/hci/network2.jpg 1x,media/pages/home/hci/network2.jpg 2x" alt="HCI">
     </a>
     <figcaption class="project-caption">
-        <h2 class="project-title">HCI Research</h2>
+        <h2 class="project-title">User Research</h2>
         <p>“Bringing the world closer together” is Facebook’s alleged mission statement—but how much truth does this line actually hold? As part of my HCI curriculum, I was given the opportunity to design and run my own study using Georgia Tech’s introductory psychology students as subjects. In order to understand Instagram’s emotional impact on college students, our team designed a study to explore different usage patterns and their effects on feelings of loneliness. Our findings suggest that incentivizing certain active platform interactions can have measurable positive impacts on user connectedness.</p>    </figcaption>
 </figure>                    <figure class="project">
-    <a class='project-link' href='' target='_blank' data-title='View Project' style="padding-bottom: 100.32230738201% ">
+    <a class='project-link' href='' target='_self' data-title='View Project' style="padding-bottom: 100.32230738201% ">
         <img class="project-image" src="media/pages/home/Electronics/CircuitPreview.png" srcset="media/pages/home/Electronics/CircuitPreview.png 1x, media/pages/home/Electronics/CircuitPreview.png 2x" alt="CircuitPreview">
     </a>
     <figcaption class="project-caption">
         <h2 class="project-title">Wireless Energy Transfer</h2>
-        <p>Inspired by Nikola Tesla, I became obsessed with induction and Tesla coils.</p>    </figcaption>
+        <p>Experiments with induction and Tesla coils.</p>    </figcaption>
 </figure>                    <figure class="project">
-    <a class='project-link' href='downloads/Ben-Wolfson-APPLEvFBI.pdf' target='_blank' data-title='View Project' style="padding-bottom: 91.154118689105% ">
+    <a class='project-link' href='downloads/Ben-Wolfson-APPLEvFBI.pdf' target='_blank' data-title='Download Paper' style="padding-bottom: 91.154118689105% ">
         <img class="project-image" src="media/pages/home/ethics/pandorasiphone.png" srcset="media/pages/home/ethics/pandorasiphone.png 1x,media/pages/home/ethics/pandorasiphone.png 2x" alt="Ethics">
     </a>
     <figcaption class="project-caption">
         <h2 class="project-title">Ethical Case Study: Apple v. FBI</h2>
         <p>Apple’s refusal to comply with 2016 FBI-mandated court orders to decrypt a terrorist’s phone sparked a seemingly inconsolable clash between principles of national security and individual rights. It has also led to debate over what a tech giant’s corporate social responsibility is in the modern world, where data has become increasingly commodified.</p>    </figcaption>
 </figure>                    <figure class="project">
-    <a class='project-link' href='' target='_blank' data-title='View Project' style="padding-bottom: 65.228758169935% ">
+    <a class='project-link' href='typing.html' target='_self' data-title='Tell me more...' style="padding-bottom: 65.228758169935% ">
         <img class="project-image" src="media/pages/home/Typing/HHKB_3_hybrid_white_blank.jpg" srcset="media/pages/home/Typing/HHKB_3_hybrid_white_blank.jpg 1x,media/pages/home/Typing/HHKB_3_hybrid_white_blank.jpg 2x" alt="Typing">
     </a>
     <figcaption class="project-caption">
