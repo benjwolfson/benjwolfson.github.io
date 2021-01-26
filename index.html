@@ -13,24 +13,9 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
-        $(document).ready(function(){
-          // Add smooth scrolling to all links
-          $("a").on('click', function(event) {
-
-            if (this.hash !== "") {
-
-              event.preventDefault();
-
-              var hash = this.hash;
-
-              $('html, body').animate({
-                scrollTop: $(hash).offset().top
-              }, 500, function(){
-                window.location.hash = hash;
-              });
-            }
-          });
-        });
+        function goToByScroll(id) {
+        $('html,body').animate({scrollTop: $("#"+id).offset().top},'slow');
+        }
     </script>
 
     <!-- Meta Tags -->
@@ -72,7 +57,7 @@
             <div class="heading" onselectstart="return false">
                 <h1 onselectstart="return false">Ben Wolfson</h1>
                 <h3 onselectstart="return false">
-                    <a class="button" href="#bio">
+                    <a class="button" onclick="goToByScroll('bio')" onselectstart="return false">
                         <span style=font-weight:600>ABOUT ME</span>
                     </a>
                 </h3>
@@ -94,6 +79,7 @@
     </section><main>
     <!-- Bio Block -->
     <section class="bio" id="bio">
+        <script></script>
         <h1 class="bio-title">
             <span>I'm Ben.</span><br>
         </h1>
