@@ -13,26 +13,12 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
-        $(document).ready(function(){
-          // Add smooth scrolling to all links
-          $("a").on('click', function(event) {
-
-            if (this.hash !== "") {
-
-              event.preventDefault();
-
-              var hash = this.hash;
-
-              $('html, body').animate({
-                scrollTop: $(hash).offset().top
-              }, 500, function(){
-                window.location.hash = hash;
-              });
-            }
-          });
-        });
+        function goToByScroll(id) {
+        $('html,body').animate({scrollTop: $("#"+id).offset().top},'slow');
+        }
     </script>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <!-- Meta Tags -->
     <meta charset="utf-8">
     <meta name="viewport"                content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -42,7 +28,7 @@
     <!-- Preload the fonts -->
     
     <!-- Manifest site -->
-    <link rel="manifest" href="assets/favicons/site.webmanifest">
+    <!-- <link rel="manifest" href="assets/favicons/site.webmanifest"> -->
 
     <!-- Page Description -->
     <meta name="description" content="Welcome! I'm Ben, a computer science undergrad at Georgia Tech. This is my personal site where I showcase the cool stuff I've worked on.">
@@ -85,6 +71,104 @@
         </h1>
             <div class="bio-content">
                 <p><span>Yes.<br></p>
+            </div>
+        <canvas id="chart1"></canvas>
+        <canvas id="chart2"></canvas>
+        <script>
+            $.getJSON("typing_full.json", function(data) {
+                    console.log( "success" );
+
+                    var dates = []
+                    var speeds = []
+                    var accs = []
+                    for (i = 0; i < Object.keys(data).length; i++) {
+                        dates.push(data[i]["date"])
+                        if (data[i]["speed"] == 0) {
+                            speeds.push(Number.NaN)
+                            accs.push(Number.NaN)
+                        } else {
+                            speeds.push(data[i]["speed"])
+                            accs.push(data[i]["acc"])
+                        }
+                    }
+                    console.log(data[200]["speed"]);
+                    var ctx1 = document.getElementById('chart1').getContext('2d');
+
+                    var chart1 = new Chart(ctx1, {
+                    // The type of chart we want to create
+                    type: 'line',
+                
+                    // The data for our dataset
+                    data: {
+                        labels: dates,
+                        datasets: [{
+                            label: 'Typing speed over time',
+                            //backgroundColor: 'rgb(255, 99, 132)',
+                            borderColor: 'rgb(255, 99, 132)',
+                            borderWidth: 1.5,
+                            data: speeds,
+                            pointRadius: 0,
+                        }]
+                    },
+            
+                    // Configuration options go here
+                    options: {
+                        spanGaps: true,
+                        scales: {
+                            xAxes: [{
+                                ticks: {
+                                    sampleSize: 100,
+                                    autoSkip: true,
+                                }
+                            }]
+                        },
+                        elements: {
+                            line: {
+                                borderDash: []
+                            }
+                        }
+                    }
+                    });
+
+                    var ctx2 = document.getElementById('chart2').getContext('2d');
+                    var chart2 = new Chart(ctx2, {
+                    // The type of chart we want to create
+                    type: 'line',
+                
+                    // The data for our dataset
+                    data: {
+                        labels: dates,
+                        datasets: [{
+                            label: 'Typing accuracy over time',
+                            //backgroundColor: 'rgb(255, 99, 132)',
+                            borderColor: 'rgb(255, 99, 132)',
+                            borderWidth: 1.5,
+                            data: accs,
+                            pointRadius: 0,
+                        }]
+                    },
+            
+                    // Configuration options go here
+                    options: {
+                        spanGaps: true,
+                        scales: {
+                            xAxes: [{
+                                ticks: {
+                                    sampleSize: 100,
+                                    autoSkip: true,
+                                }
+                            }]
+                        },
+                        elements: {
+                            line: {
+                                borderDash: []
+                            }
+                        }
+                    }
+                    });
+
+            });
+        </script>
     </section>
     </main>    <footer class="footer">
         <div id="particles2"></div>
