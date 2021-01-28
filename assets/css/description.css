@@ -474,6 +474,17 @@ main {
 	font-weight:600;
 }
 
+
+#chart1 {
+	height:200px;
+	width:300px;
+}
+
+#chart2 {
+	height:200px;
+	width:300px;
+}
+
 @media (max-width: 700px) {
     .intro {
         position: fixed;
@@ -493,7 +504,8 @@ main {
 	}
 
     .heading h3 {
-        top: 20%;
+        top: 40%;
+		height: 60px;
     }
 	.highlightme {
 		font-size: 3.2rem;

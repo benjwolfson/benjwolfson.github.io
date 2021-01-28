@@ -1,16 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FECLJ6G6NP"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    
-    gtag('config', 'G-FECLJ6G6NP');
-    </script>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
         function goToByScroll(id) {
@@ -72,37 +62,37 @@
             <div class="bio-content">
                 <p><span>Yes.<br></p>
             </div>
-        <canvas id="chart1"></canvas>
-        <canvas id="chart2"></canvas>
+        <canvas id="chart1" height=150></canvas>
+        <canvas id="chart2" height=150></canvas>
         <script>
             $.getJSON("typing_full.json", function(data) {
                     console.log( "success" );
-
                     var dates = []
                     var speeds = []
                     var accs = []
                     for (i = 0; i < Object.keys(data).length; i++) {
                         dates.push(data[i]["date"])
-                        if (data[i]["speed"] == 0) {
+                        if (data[i]["speed"] == null) {
                             speeds.push(Number.NaN)
                             accs.push(Number.NaN)
                         } else {
-                            speeds.push(data[i]["speed"])
-                            accs.push(data[i]["acc"])
+                            speeds.push(Math.round(data[i]["speed"]))
+                            accs.push(data[i]["acc"] * 100)
                         }
                     }
-                    console.log(data[200]["speed"]);
                     var ctx1 = document.getElementById('chart1').getContext('2d');
 
                     var chart1 = new Chart(ctx1, {
                     // The type of chart we want to create
                     type: 'line',
+                    parsing: false,
+                    normalized: true,
                 
                     // The data for our dataset
                     data: {
                         labels: dates,
                         datasets: [{
-                            label: 'Typing speed over time',
+                            label: 'Avg. Typing Speed (words per minute)',
                             //backgroundColor: 'rgb(255, 99, 132)',
                             borderColor: 'rgb(255, 99, 132)',
                             borderWidth: 1.5,
@@ -113,12 +103,25 @@
             
                     // Configuration options go here
                     options: {
+                        showToolTips: false,
+                        animation: {
+                            duration: 1000
+                        },
                         spanGaps: true,
+                        responsive: true,
                         scales: {
                             xAxes: [{
                                 ticks: {
-                                    sampleSize: 100,
-                                    autoSkip: true,
+                                    callback: function(value) {
+                                        return new Date(value).toLocaleString('en-US', {month: 'short', year: 'numeric' });
+                                    }
+                                }
+                            }],
+                            yAxes: [{
+                                ticks: {
+                                    callback: function(value) {
+                                        return new String(value + " wpm");
+                                    }
                                 }
                             }]
                         },
@@ -134,12 +137,14 @@
                     var chart2 = new Chart(ctx2, {
                     // The type of chart we want to create
                     type: 'line',
+                    parsing: false,
+                    normalized: true,
                 
                     // The data for our dataset
                     data: {
                         labels: dates,
                         datasets: [{
-                            label: 'Typing accuracy over time',
+                            label: 'Avg. Typing Accuracy',
                             //backgroundColor: 'rgb(255, 99, 132)',
                             borderColor: 'rgb(255, 99, 132)',
                             borderWidth: 1.5,
@@ -150,14 +155,27 @@
             
                     // Configuration options go here
                     options: {
+                        hover: false,
+                        animation: {
+                            duration: 1000
+                        },
+
                         spanGaps: true,
                         scales: {
                             xAxes: [{
                                 ticks: {
-                                    sampleSize: 100,
-                                    autoSkip: true,
+                                    callback: function(value) {
+                                        return new Date(value).toLocaleString('en-US', {month: 'short', year: 'numeric' });
+                                    }
                                 }
-                            }]
+                            }],
+                            yAxes: [{
+                                ticks: {
+                                    callback: function(value) {
+                                        return new String(value + "%");
+                                    }
+                                }
+                            }]  
                         },
                         elements: {
                             line: {
