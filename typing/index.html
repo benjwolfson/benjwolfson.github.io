@@ -86,7 +86,7 @@
                     data: {
                         labels: dates,
                         datasets: [{
-                            label: 'Typing Speed (words per minute)',
+                            label: 'Words per Minute',
                             borderColor: 'rgb(255, 99, 132)',
                             borderWidth: 3.5,
                             data: speeds,
@@ -114,7 +114,7 @@
                             yAxes: [{
                                 ticks: {
                                     callback: function(value) {
-                                        return new String(value + " wpm");
+                                        return new String(value + "    ");
                                     }
                                 }
                             }]
@@ -138,7 +138,7 @@
                     data: {
                         labels: dates,
                         datasets: [{
-                            label: 'Typing Accuracy',
+                            label: 'Accuracy',
                             borderColor: 'rgb(255, 99, 132)',
                             borderWidth: 3.5,
                             data: accs,
