@@ -16,6 +16,9 @@
       function goToByScroll(id) {
       $('html,body').animate({scrollTop: $("#"+id).offset().top},'slow');
       }
+      function goToPageByScroll(id) {
+        $('html,body').animate({scrollTop: $("/#"+id).offset().top},'fast');
+      }
   </script>
 
   <!-- Meta Tags -->
@@ -27,7 +30,7 @@
   <!-- Preload the fonts -->
   
   <!-- Manifest site -->
-  <link rel="manifest" href="assets/favicons/site.webmanifest">
+  <link rel="manifest" href="/assets/favicons/site.webmanifest">
 
   <!-- Page Description -->
   <meta name="description" content="Welcome! I'm Ben, a computer science undergrad at Georgia Tech. This is my personal site where I showcase the cool stuff I've worked on.">
@@ -36,19 +39,50 @@
   <title>Ben Wolfson</title>
       
   <!-- Favicons Icons -->  
-  <link rel="apple-touch-icon" href="assets/favicons/apple-touch-icon.png" sizes="180x180">
-  <link rel="icon"             href="assets/favicons/favicon-32x32.png"    sizes="32x32" type="image/png">
-  <link rel="icon"             href="assets/favicons/favicon-16x16.png"    sizes="16x16" type="image/png">
-  <link rel="mask-icon"        href="assets/favicons/safari-pinned-tab.svg" color="#23372d">
-  <link rel="shortcut icon"    href="assets/favicons/favicon.ico">
+  <link rel="apple-touch-icon" href="/assets/favicons/apple-touch-icon.png" sizes="180x180">
+  <link rel="icon"             href="/assets/favicons/favicon-32x32.png"    sizes="32x32" type="image/png">
+  <link rel="icon"             href="/assets/favicons/favicon-16x16.png"    sizes="16x16" type="image/png">
+  <link rel="mask-icon"        href="/assets/favicons/safari-pinned-tab.svg" color="#23372d">
+  <link rel="shortcut icon"    href="/assets/favicons/favicon.ico">
   <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" href="basic.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
+<header>
+  <nav>
+    <div class="container">
+      <a href="/" onclick="goToPageByScroll('saug')" id="brand" >BACK</a>
+    </div>
+  </nav>
+  <script>
+    $(document).ready(function () {
+  
+  'use strict';
+  
+   var c, currentScrollTop = 0,
+       navbar = $('nav');
+
+   $(window).scroll(function () {
+      var a = $(window).scrollTop();
+      var b = navbar.height();
+     
+      currentScrollTop = a;
+     
+      if (c < currentScrollTop && a > b + b) {
+        navbar.addClass("scrollUp");
+      } else if (c > currentScrollTop && !(a <= b)) {
+        navbar.removeClass("scrollUp");
+      }
+      c = currentScrollTop;
+  });
+  
+});
+  </script>
+</header>
 <body>
-  <div class="post">
+  <div class="post" style=margin-top:80px>
     <h1>Let's talk about student housing.</h1>
     <p>If you're looking
       to live in an off-campus property (like 87% of college students), you'll be signing
@@ -92,7 +126,7 @@
     <p>
       Airbnb is designed around short-term stays. This ethos is reflected in the marketplace
       economics: in metropolitan areas (where most internships are located), property owners liberally
-      jack up their rent. They can do this becuase their primary tenets are vacationers and business travelers.
+      jack up their rent. They can do this because their primary tenets are vacationers and business travelers.
       Unfortunately, most of these prices end up being unreasonable to be covered by a
       relocation stipend.
     </p>
@@ -127,7 +161,7 @@
     <figure>
       <img src="greencity.png">
     </figure>
-    <h1> So, what did you build?</h1>
+    <h1> So, what did we build?</h1>
 
     <h2>KeyDrop: a subleasing marketplace for students.</h2>
 
@@ -166,7 +200,7 @@
         <b>Roommate parties*: </b>Trying to split payments with a roomie? No problem, create a party.
       </li>
       <br>
-      <figcaption style=font-size:medium;color:rgb(139,139,139)> <i>* = in development.</i><br><br><br><br></figcaption>
+      <figcaption style=font-size:medium;color:rgb(139,139,139)> <i>* = in development.</i><br><br></figcaption>
     </ol>
 
 
@@ -175,13 +209,17 @@
 
     <p>
       The app is coded in Dart with Google's Flutter UI framework and a Firebase backend. We find that a vertically integrated stack is
-      more convenient for our needs—for now. Plus, have to make use of our free GPC credits somehow, right?
+      more convenient for our needs—for now. Plus, have to make use of our free GCP credits somehow, right?
     </p>
-    
-
-
-
-
+    <footer class="footer" style=margin-top:200px>
+      <div id="particles2"></div>
+      <div class="inner">
+              <img src="/assets/icons/benjwolfson-logo-clear.png" alt="Benjwolfson Logo"><br><br>
+              <small style=color:white>&copy 2021 by Ben Wolfson
+      </div>
+    </footer>
 </div>
+
+
     </body>
 </html>
