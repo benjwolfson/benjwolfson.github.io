@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FECLJ6G6NP"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  
+  gtag('config', 'G-FECLJ6G6NP');
+  </script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+      function goToByScroll(id) {
+      $('html,body').animate({scrollTop: $("#"+id).offset().top},'slow');
+      }
+  </script>
+
+  <!-- Meta Tags -->
+  <meta charset="utf-8">
+  <meta name="viewport"                content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="theme-color"             content="#000000">
+  <meta name="msapplication-TileColor" content="#000000">
+  
+  <!-- Preload the fonts -->
+  
+  <!-- Manifest site -->
+  <link rel="manifest" href="assets/favicons/site.webmanifest">
+
+  <!-- Page Description -->
+  <meta name="description" content="Welcome! I'm Ben, a computer science undergrad at Georgia Tech. This is my personal site where I showcase the cool stuff I've worked on.">
+
+  <!-- Page Title -->
+  <title>Ben Wolfson</title>
+      
+  <!-- Favicons Icons -->  
+  <link rel="apple-touch-icon" href="assets/favicons/apple-touch-icon.png" sizes="180x180">
+  <link rel="icon"             href="assets/favicons/favicon-32x32.png"    sizes="32x32" type="image/png">
+  <link rel="icon"             href="assets/favicons/favicon-16x16.png"    sizes="16x16" type="image/png">
+  <link rel="mask-icon"        href="assets/favicons/safari-pinned-tab.svg" color="#23372d">
+  <link rel="shortcut icon"    href="assets/favicons/favicon.ico">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="basic.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="post">
+    <h1>Let's talk about student housing.</h1>
+    <p>If you're looking
+      to live in an off-campus property (like 87% of college students), you'll be signing
+      a contract for the <i>full calendar year</i>. Unfortunately, the academic year only lasts around 36 weeks.
+    </p>
+    <ul>
+      <li>Getting a summer internship? (60% of students)</li>
+      <li>Studying abroad? (16% of students)</li>
+    </ul>
+    <p>
+      Chances are, <b>you'll have to find someone to sublet your place while you're gone.</b> Unless you like throwing money away, of course.
+    </p>
+    <blockquote>
+      <p>You would think this contractual misallocation has produced a thriving secondary market across the United States. It hasn't.</p>
+    </blockquote>
+    <figure>
+        <img src="cityscape.jpg">
+    </figure>
+
+    <h2>Want to sublet your apartment? Facebook sucks. So does Airbnb.</h2>
+
+    <p><b><i>Bad for sellers.</i><br></b>According to our surveys, <i>over 20%</i> of off-campus dwellers have failed
+    to find a sublessee. Using Airbnb is off the table, since you need to get permission
+    from your landlord. They probably aren't interested in turning their apartment complex into a timeshare.</p>
+    <p>Turns out, Facebook Groups aren't that great for renting an apartment. Since posts have no clear ordering,
+      it's very hard to get eyes on your listing. Using Marketplace isn't much better, due to
+      an abundance of spam and lack of useful search filters. This is designed to be
+      ineffective: Facebook actually benefits from making users spend more time on their platform
+      for ad revenue.
+    </p>
+
+    <div class="innerfig">
+      <img class="innerimg" src="IMG_1677.jpg" style=width:100%>
+      <figcaption>Over 18,000 members. Public group. One 'filter'. Recipe for disaster.</figcaption>
+    </div>
+
+    <p><b><i>Buyer beware.</i><br></b>Inefficiency is well documented on both sides of the spectrum:
+      our data shows that summer interns spend an average of 20-30 working hours looking for a place to rent.
+      Why not use a proven housing solution like Airbnb? Price.
+    </p>
+    <p>
+      Airbnb is designed around short-term stays. This ethos is reflected in the marketplace
+      economics: in metropolitan areas (where most internships are located), property owners liberally
+      jack up their rent. They can do this becuase their primary tenets are vacationers and business travelers.
+      Unfortunately, most of these prices end up being unreasonable to be covered by a
+      relocation stipend.
+    </p>
+
+    <div class="innerfig">
+        <img class="innerimg" src="IMG_1675.jpg">
+        <figcaption>Airbnb rents for monthly stays around Georgia Tech. Yikes.</figcaption>
+    </div>
+    
+
+    <p>
+      <b style=font-size:25>Tl;dr</b>
+    </p>
+
+    <blockquote>
+      <ul>
+        <li>
+          Airbnb owners are trying to make money.
+        </li>
+        <li>
+          College students are trying to break even.
+        </li>
+        <li>
+          Facebook Groups are inefficient.
+        </li>
+        <li>Marketplace doesn't have search functionality tailored towards
+      interning away from home.
+        </li>
+      </ul>
+    </blockquote>
+
+    <figure>
+      <img src="greencity.png">
+    </figure>
+    <h1> So, what did you build?</h1>
+
+    <h2>KeyDrop: a subleasing marketplace for students.</h2>
+
+    <p>
+      Our features make sense.
+    </p>
+    <ol>
+      <li>
+        <b>Identity verification:</b> Real students. No bots. No spam.<br><br>
+        <div class="innerfig">
+          <img class="innerimg" src="verification.jpg" style=width:90%>
+          <figcaption>Chimp Chimperson can chimp another time.</figcaption>
+          <br>
+        </div>
+      </li>
+      <li>
+        <b>Peer-to-peer:</b> Everyone here is just like you.<br><br>
+        <div class="innerfig">
+          <video autoplay muted loop playsinline class="innervideo" src="listing_demo.mp4" style=width:60%></video>
+          <figcaption>Demo of our listings page.</figcaption>
+        </div><br>
+      </li>
+      <li>
+        <b>Powerful search:</b> Details matter. We've got your back with filters that are important to you.<br><br>
+        <div class="innerfig">
+          <video autoplay muted loop playsinline class="innervideo" src="filter_demo.mp4" style=width:60%></video>
+          <figcaption>Glorious filters.</figcaption>
+        </div><br>
+      </li>
+
+      <li>
+        <b>Payments with Stripe*: </b>No need to worry about phony contracts, Venmo, or Cash App.
+        Everything's automated, on time, and hassle free.
+      </li>
+      <li>
+        <b>Roommate parties*: </b>Trying to split payments with a roomie? No problem, create a party.
+      </li>
+      <br>
+      <figcaption style=font-size:medium;color:rgb(139,139,139)> <i>* = in development.</i><br><br><br><br></figcaption>
+    </ol>
+
+
+
+    <h2 style=margin-top:50px>Our tech stack.</h2>
+
+    <p>
+      The app is coded in Dart with Google's Flutter UI framework and a Firebase backend. We find that a vertically integrated stack is
+      more convenient for our needs—for now. Plus, have to make use of our free GPC credits somehow, right?
+    </p>
+    
+
+
+
+
+</div>
+    </body>
+</html>

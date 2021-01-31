@@ -1,0 +1,67 @@
+.font-face {
+    font-family: 'Inter', sans-serif;
+}
+
+.post {
+    display: grid;
+    /* I'm using 440px instead of 740px as it makes it easier to view it in the Scrimba simulator additive-symbols: */
+    grid-template-columns: minmax(0.6rem, 1fr)
+                           minmax(0.6rem, 1fr)
+                           10px
+                           minmax(auto, 57ch)
+                           10px
+                           minmax(0.6rem, 1fr)
+                           minmax(0.6rem, 1fr);
+}
+
+.post {
+    display: grid;
+    /* I'm using 440px instead of 740px as it makes it easier to view it in the Scrimba simulator additive-symbols: */
+    grid-template-columns: minmax(0.6rem, 1fr)
+                           minmax(0.6rem, 1fr)
+                           10px
+                           minmax(57ch, 90ch)
+                           10px
+                           minmax(0.6rem, 1fr)
+                           minmax(0.6rem, 1fr);
+}
+
+
+.post * {
+    grid-column: 4;
+}
+
+.post figure {
+    grid-column: 1 / -1;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.post innerfig {
+    grid-column: 4 / span 1;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.post aside {
+    grid-column: 5 / -1;
+}
+
+.post blockquote {
+    grid-column: 3 / span 2;
+    font-family: 'Inter', sans-serif;
+    margin: 0px 0;
+    color: #666;
+    background-color:rgb(255,231,231);
+    border-left: 3px solid black;
+    padding-left: 10px;
+}
+
+/* General styling */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    line-height: 1.4;
+}
+
