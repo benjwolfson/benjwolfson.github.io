@@ -115,7 +115,17 @@
 				</style>
 				<div class="css-1e2o1yj e1qsw1o64" id="bio">
 					<main style="flex:1">
-						<h1 style="margin-top:1em">I'm Ben. <br />I like coding, designing, and investing.</h1>
+						<style yep>
+							.biosize {
+								font-size: var(--font-size-1);
+							}
+							@media (max-width:700px) {
+								.biosize {
+									font-size: 2em;
+								}
+							}
+						</style>
+						<h1 class="biosize" style="margin-top:1em">I'm Ben. <br />I like coding, designing, and investing.</h1>
 						<style scoped>
 							.on-the-fly {
 								font-size: var(--font-size-4);
