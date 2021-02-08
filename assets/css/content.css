@@ -370,3 +370,7 @@ figure figcaption {
   font-size: 1em;
   font-family:'Inter';
 }
+
+.chartjs-wrapper {
+  grid-column: 4;
+}

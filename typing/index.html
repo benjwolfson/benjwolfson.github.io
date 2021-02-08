@@ -1,192 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-    <!-- Meta Tags -->
-    <meta charset="utf-8">
-    <meta name="viewport"                content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <meta name="theme-color"             content="#000000">
-    <meta name="msapplication-TileColor" content="#000000">
-    
-    <!-- Preload the fonts -->
-    
-    <!-- Manifest site -->
-    <!-- <link rel="manifest" href="assets/favicons/site.webmanifest"> -->
-
-    <!-- Page Description -->
-    <meta name="description" content="Welcome! I'm Ben, a computer science undergrad at Georgia Tech. This is my personal site where I showcase the cool stuff I've worked on.">
-
-    <!-- Page Title -->
-    <title>Typing</title>
-        
-    <!-- Favicons Icons -->  
-    <link rel="apple-touch-icon" href="/assets/favicons/apple-touch-icon.png" sizes="180x180">
-    <link rel="icon"             href="/assets/favicons/favicon-32x32.png"    sizes="32x32" type="image/png">
-    <link rel="icon"             href="/assets/favicons/favicon-16x16.png"    sizes="16x16" type="image/png">
-    <link rel="mask-icon"        href="/assets/favicons/safari-pinned-tab.svg" color="#23372d">
-    <link rel="shortcut icon"    href="/assets/favicons/favicon.ico">
-    
-
-    <!-- Stylesheet -->
-    <link href="/assets/css/description.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FECLJ6G6NP"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
   
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  gtag('config', 'G-FECLJ6G6NP');
+  </script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+  <!-- Meta Tags -->
+  <meta charset="utf-8">
+  <meta name="viewport"                content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="theme-color"             content="#000000">
+  <meta name="msapplication-TileColor" content="#000000">
+  
+  <!-- Preload the fonts -->
+  
+  <!-- Manifest site -->
+  <link rel="manifest" href="/assets/favicons/site.webmanifest">
+
+  <!-- Page Description -->
+  <meta name="description" content="Welcome! I'm Ben, a computer science undergrad at Georgia Tech. This is my personal site where I showcase the cool stuff I've worked on.">
+
+  <!-- Page Title -->
+  <title>Ben Wolfson</title>
+      
+  <!-- Favicons Icons -->  
+  <link rel="apple-touch-icon" href="/assets/favicons/apple-touch-icon.png" sizes="180x180">
+  <link rel="icon"             href="/assets/favicons/favicon-32x32.png"    sizes="32x32" type="image/png">
+  <link rel="icon"             href="/assets/favicons/favicon-16x16.png"    sizes="16x16" type="image/png">
+  <link rel="mask-icon"        href="/assets/favicons/safari-pinned-tab.svg" color="#23372d">
+  <link rel="shortcut icon"    href="/assets/favicons/favicon.ico">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="/assets/css/content.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
+<header>
+  <nav>
+    <div class="container">
+      <a href="/" onclick="goToPageByScroll('saug')" id="brand" >BACK</a>
+    </div>
+  </nav>
+  <script>
+    $(document).ready(function () {
+  
+  'use strict';
+  
+   var c, currentScrollTop = 0,
+       navbar = $('nav');
 
-<body class="home">
-    <section class="intro">
-        <div id="particles" class="#site-header">
-            <div class="heading" onselectstart="return false">
-                <h3 onselectstart="return false">
-                    <a class="button" href="/">
-                        <span style=font-weight:600>HOME</span>
-                    </a>
-                </h3>
-            </div>
-        </div>
-    </section><main>
-    <!-- Writeup Block -->
-    <section class="bio" id="bio">
-        <h1 class="bio-title">
-            <span>...typing?</span><br>
-        </h1>
-            <div class="bio-content">
-                <p><span>Yes.<br></p>
-            </div>
-        <canvas id="chart1" height=150></canvas>
-        <canvas id="chart2" height=150></canvas>
-        <script>
-            $.getJSON("dates_months_speeds.json", function(data) {
-                    console.log( "success" );
-                    var dates = []
-                    var speeds = []
-                    var accs = []
-                    for (i = 0; i < Object.keys(data).length; i++) {
-                        dates.push(data[i]["date"])
-                        if (data[i]["speed"] == "") {
-                            speeds.push(Number.NaN)
-                            accs.push(Number.NaN)
-                        } else {
-                            speeds.push(Math.round(data[i]["speed"]))
-                            accs.push(data[i]["acc"] * 100)
-                        }
+   $(window).scroll(function () {
+      var a = $(window).scrollTop();
+      var b = navbar.height();
+     
+      currentScrollTop = a;
+     
+      if (c < currentScrollTop && a > b + b) {
+        navbar.addClass("scrollUp");
+      } else if (c > currentScrollTop && !(a <= b)) {
+        navbar.removeClass("scrollUp");
+      }
+      c = currentScrollTop;
+  });
+  
+});
+  </script>
+</header>
+<body>
+  <div class="post" style=margin-top:80px>
+    <h1>...typing?</h1>
+    <div style="text-align:center;"><iframe src="https://www.youtube.com/embed/VzUp6FXN1oE?modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&theme=light" width="360" height="500" frameborder="0" controls></iframe></div>
+    <h2>
+        Let me explain.
+    </h2>
+    <p>
+        Shortly after I got my first computer in early 2013, my best friend introduced me to typeracer.com (what you see above!),
+        a fun website where people race against each other by typing quotes from famous books, movies, and songs.
+        His speed of 100 words per minute (wpm) seemed almost inconceivable to me at the time, and I became obsessed with trying to beat him.
+    </p>
+    <p>
+        The online typing community has exploded in the last decade—its growth fueled by the
+        proliferation of online gaming and the subsequent mass adoption of mechanical keyboards. According to SimilarWeb, the two most popular
+        typing sites (Typeracer and 10FastFingers) got a combined <b>11 million visits</b> in December 2020. It's a
+        surprisingly popular niche.
+    </p>
+    <h2>
+        How fast am I?
+    </h2>
+    <div style="width:100%"><canvas id="chart1" width="100%"></canvas></div>
+    <div style="width:100%"><canvas id="chart2" width="100%"></canvas></div>
+    <script>
+        $.getJSON("dates_months_speeds.json", function(data) {
+                console.log( "success" );
+                var dates = []
+                var speeds = []
+                var accs = []
+                for (i = 0; i < Object.keys(data).length; i++) {
+                    dates.push(data[i]["date"])
+                    if (data[i]["speed"] == "") {
+                        speeds.push(Number.NaN)
+                        accs.push(Number.NaN)
+                    } else {
+                        speeds.push(Math.round(data[i]["speed"]))
+                        accs.push(data[i]["acc"] * 100)
                     }
-                    var ctx1 = document.getElementById('chart1').getContext('2d');
+                }
+                var ctx1 = document.getElementById('chart1').getContext('2d');
 
-                    var chart1 = new Chart(ctx1, {
-                    // The type of chart we want to create
-                    type: 'line',
-                    parsing: false,
-                    normalized: true,
-                
-                    // The data for our dataset
-                    data: {
-                        labels: dates,
-                        datasets: [{
-                            label: 'Words per Minute',
-                            borderColor: 'rgb(255, 99, 132)',
-                            borderWidth: 3.5,
-                            data: speeds,
-                            pointRadius: 0,
+                var chart1 = new Chart(ctx1, {
+                type: 'line',
+                parsing: false,
+                normalized: true,
+
+                data: {
+                    labels: dates,
+                    datasets: [{
+                        label: 'Words per Minute',
+                        borderColor: 'rgb(255, 99, 132)',
+                        borderWidth: 3.5,
+                        data: speeds,
+                        pointRadius: 0,
+                    }]
+                },
+
+                options: {
+                    showToolTips: false,
+                    animation: {
+                        duration: 1500
+                    },
+                    spanGaps: true,
+                    responsive: true,
+                    scales: {
+                        xAxes: [{
+                            setTickMaxLimit: 10,
+                            ticks: {
+                                callback: function(value) {
+                                    return new Date(value).toLocaleString('en-US', {month: 'short', year: 'numeric' });
+                                }
+                            }
+                        }],
+                        yAxes: [{
+                            ticks: {
+                                callback: function(value) {
+                                    return new String(value + "    ");
+                                }
+                            }
                         }]
                     },
-            
-                    // Configuration options go here
-                    options: {
-                        showToolTips: false,
-                        animation: {
-                            duration: 1500
-                        },
-                        spanGaps: true,
-                        responsive: true,
-                        scales: {
-                            xAxes: [{
-                                setTickMaxLimit: 10,
-                                ticks: {
-                                    callback: function(value) {
-                                        return new Date(value).toLocaleString('en-US', {month: 'short', year: 'numeric' });
-                                    }
-                                }
-                            }],
-                            yAxes: [{
-                                ticks: {
-                                    callback: function(value) {
-                                        return new String(value + "    ");
-                                    }
-                                }
-                            }]
-                        },
-                        elements: {
-                            line: {
-                                borderDash: []
-                            }
+                    elements: {
+                        line: {
+                            borderDash: []
                         }
                     }
-                    });
+                }
+                });
 
-                    var ctx2 = document.getElementById('chart2').getContext('2d');
-                    var chart2 = new Chart(ctx2, {
-                    // The type of chart we want to create
-                    type: 'line',
-                    parsing: false,
-                    normalized: true,
-                
-                    // The data for our dataset
-                    data: {
-                        labels: dates,
-                        datasets: [{
-                            label: 'Accuracy',
-                            borderColor: 'rgb(255, 99, 132)',
-                            borderWidth: 3.5,
-                            data: accs,
-                            pointRadius: 0,
-                        }]
+                var ctx2 = document.getElementById('chart2').getContext('2d');
+                var chart2 = new Chart(ctx2, {
+
+                type: 'line',
+                parsing: false,
+                normalized: true,
+
+                data: {
+                    labels: dates,
+                    datasets: [{
+                        label: 'Accuracy',
+                        borderColor: 'rgb(255, 99, 132)',
+                        borderWidth: 3.5,
+                        data: accs,
+                        pointRadius: 0,
+                    }]
+                },
+        
+                // Configuration options go here
+                options: {
+                    hover: false,
+                    animation: {
+                        duration: 1500
                     },
-            
-                    // Configuration options go here
-                    options: {
-                        hover: false,
-                        animation: {
-                            duration: 1500
-                        },
-
-                        spanGaps: true,
-                        scales: {
-                            xAxes: [{
-                                ticks: {
-                                    callback: function(value) {
-                                        return new Date(value).toLocaleString('en-US', {month: 'short', year: 'numeric' });
-                                    }
+                    spanGaps: true,
+                    responsive: true,
+                    scales: {
+                        xAxes: [{
+                            ticks: {
+                                callback: function(value) {
+                                    return new Date(value).toLocaleString('en-US', {month: 'short', year: 'numeric' });
                                 }
-                            }],
-                            yAxes: [{
-                                ticks: {
-                                    callback: function(value) {
-                                        return new String(value + "%");
-                                    }
-                                }
-                            }]  
-                        },
-                        elements: {
-                            line: {
-                                borderDash: []
                             }
+                        }],
+                        yAxes: [{
+                            ticks: {
+                                callback: function(value) {
+                                    return new String(value + "%");
+                                }
+                            }
+                        }]  
+                    },
+                    elements: {
+                        line: {
+                            borderDash: []
                         }
                     }
-                    });
+                }
+                });
+        });
+    </script>
+    <blockquote>
+        <p> I rank among the top 5,000 fastest English typists in the world, averaging more than 160 wpm.
+            This puts me in the <b>99.9997th percentile</b>.</p>
+    </blockquote>
+    <p>
+      The charts you see above represent the totality of my competitive typing history: monthly averages of the <b>over 17,000 tests</b> I've taken during the past 8 years or so through TypeRacer. Although I don't practice nearly as much as I used to, my speed and accuracy continue to improve.
+    </p>
 
-            });
-        </script>
-    </section>
-    </main>    <footer class="footer">
-        <div id="particles2"></div>
-        <div class="inner">
-                <img src="/assets/icons/benjwolfson-logo-clear.png" alt="Benjwolfson Logo" style="width: 150px;height:150px"><br><br>
-                <small style=color:white>&copy 2021 by Ben Wolfson
-        </div>
+    <h2>Typing taught me how to write.</h2>
+
+    <p>
+        It might be a bit unconventional, but I attribute my love for the arts to typing. Feeding my brain the works of great philosophers, screenwriters, musicians, and novelists through TypeRacer led to tremendous
+        improvements in my critical thinking, writing, and reading during my teens. I absorbed my sense of language through thousands of snippets of great literature and media. (Sounds a bit like deep learning, if you ask me...)
+    </p>
+    <p>
+        Being a fast typist (not surprisingly) comes in handy in a lot of ways: with coding, writing—and even as a cool party trick occasionally. That being said, even though I can get my ideas on paper faster,
+        I'm still limited by how fast I can come up with those ideas. Being able to pluck more keys on my keyboard doesn't mean I can think any faster.
+    </p>
+
+    <h2>
+        What keyboard do I use?
+    </h2>
+
+    <p>I get this question a lot.
+    </p>
+    <p>
+      My daily driver is the Happy Hacking Keyboard (HHKB). It was designed in the 90's by a professor at the University of Tokyo specifically for system administrators and programmers.
+    </p>
+
+    <div class="innerfig" style="text-align:center;">
+        <img class="innerimg" src="HHKB_3_hybrid_white_blank.jpg">
+    </div>
+    
+
+    <p>
+        A traditional keyboard has 104 keys, whereas the HHKB only has 60. This allows it to be perfectly centered on my desk and not interfere with mouse movements. It's highly ergonomic.
+    </p>
+
+    <p>
+        What you can't see are the Topre keyswitches behind the keycaps.
+    </p>
+    <div class="innerfig" style="text-align:center;">
+        <img class="innerimg" src="topre_keyswitch.png">
+    </div>
+    <p>
+        Instead of having a thin rubber sheet behind each key, mechanical keyboards have a distinct mechanism. This allows for more key travel, tactility, and an overall better typing experience. <b>Topre</b> is a beautiful hybrid between mechanical and rubber-dome keyboards: it has a mechanical device, but also a thick rubber sheet between the backplate and circuit board. The result feels incredible to type on, and the signature "thock" sound with each keystroke produces delightful auditory feedback.
+    </p>
+
+    <p>Here's a full minute if you're interested.</p>
+    <div style="text-align:center;"><iframe src="https://www.youtube.com/embed/CUBDodNhlyA?modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&theme=light" width="360" height="500" frameborder="0" controls></iframe></div>
+    <br><br><br>
+    <p></p>
+    <blockquote>
+        <p>“Cowboys in the western United States leave their horses when they die. But never leave their saddles, regardless of how long they need to walk in the desert. Saddles are interfaces that are deeply adapted to our bodies whereas horses are consumable items. It should not be forgotten that computers are consumables nowadays, but keyboards are interfaces that we can use through our lives.”<br><br>- Professor Eiiti Wada</p>
+    </blockquote>
+    
+    <footer class="footer" style=margin-top:200px>
+      <div id="particles2"></div>
+      <div class="inner">
+              <small style=color:white>&copy 2021 by Ben Wolfson
+      </div>
     </footer>
     <script src="/assets/js/particles.min.js"></script>    <script src="/assets/js/main.min.js"></script>
+</div>
+
+
+    </body>
 </html>
