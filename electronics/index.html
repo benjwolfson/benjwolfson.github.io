@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FECLJ6G6NP"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  
+  gtag('config', 'G-FECLJ6G6NP');
+  </script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+  <!-- Meta Tags -->
+  <meta charset="utf-8">
+  <meta name="viewport"                content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=1">
+  <meta name="theme-color"             content="#000000">
+  <meta name="msapplication-TileColor" content="#000000">
+  
+  <!-- Preload the fonts -->
+  
+  <!-- Manifest site -->
+  <link rel="manifest" href="/assets/favicons/site.webmanifest">
+
+  <!-- Page Description -->
+  <meta name="description" content="Welcome! I'm Ben, a computer science undergrad at Georgia Tech. This is my personal site where I showcase the cool stuff I've worked on.">
+
+  <!-- Page Title -->
+  <title>Ben Wolfson</title>
+      
+  <!-- Favicons Icons -->  
+  <link rel="apple-touch-icon" href="/assets/favicons/apple-touch-icon.png" sizes="180x180">
+  <link rel="icon"             href="/assets/favicons/favicon-32x32.png"    sizes="32x32" type="image/png">
+  <link rel="icon"             href="/assets/favicons/favicon-16x16.png"    sizes="16x16" type="image/png">
+  <link rel="mask-icon"        href="/assets/favicons/safari-pinned-tab.svg" color="#23372d">
+  <link rel="shortcut icon"    href="/assets/favicons/favicon.ico">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="/assets/css/content.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<header>
+  <nav>
+    <div class="container">
+      <a href="/" onclick="goToPageByScroll('saug')" id="brand" >BACK</a>
+    </div>
+  </nav>
+  <script>
+    $(document).ready(function () {
+  
+  'use strict';
+  
+   var c, currentScrollTop = 0,
+       navbar = $('nav');
+
+   $(window).scroll(function () {
+      var a = $(window).scrollTop();
+      var b = navbar.height();
+     
+      currentScrollTop = a;
+     
+      if (c < currentScrollTop && a > b + b) {
+        navbar.addClass("scrollUp");
+      } else if (c > currentScrollTop && !(a <= b)) {
+        navbar.removeClass("scrollUp");
+      }
+      c = currentScrollTop;
+  });
+  
+});
+  </script>
+</header>
+<body>
+  <div class="post" style=margin-top:80px>
+    <h1>My curiosity has always gotten me into trouble.</h1>
+    <p>
+        Every day on my way to elementary school, I dozily gazed at the high voltage power lines near my house. How did electricity work? It had to be magic. In Kindergarten, I tested my theory, sticking both ends of an unbent paperclip in a wall socket. Sparks flew. I burned my hand—a born engineer.
+    </p>
+    <p>
+        Fascination with electricity never stopped. By the time I reached middle school, my desk had devolved into a jumbled playground of circuit boards, copper wire, and a conglomerate of electrical components. I spent hours tinkering, fashioning, and circuit-hacking projects to life. Eventually, I decided that I wanted to pursue Nikola Tesla's vision of a wirelessly connected world.
+    </p>
+    <h2>
+        Harnessing wireless energy.
+    </h2>
+    <p>
+        My freshman year of high school, I began experimenting with simple induction systems and incorporating passive tank circuits to improve transmission distances.
+    </p>
+    <div style="text-align:center;"><iframe src="https://www.youtube.com/embed/SediC6NSifI?modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&theme=light" width="336" height="600" frameborder="0" controls></iframe></div>
+    <div class="innerfig" style="text-align:center;">
+        <img class="innerimg" src="circuit1.png" style="width:70%;">
+        <figcaption>Yes, that's an aluminum foil heat sink for the transistor.</figcaption>
+    </div>
+    <p>
+        I spent a few months redesigning the circuit topology for higher wattage throughput. It was based on what is known as the Mazzili flyback transformer driver, which was actually a very popular choice among Tesla coil and other high voltage hobbyists at the time. By making a few small modifications—namely, replacing the flyback transformer with a small inductor and using a single loop of copper for the transmitting coil to minimize characteristic impedance—the result was an extremely robust system. I was able to achieve over 10W of power delivery with 30cm of separation.
+    </p>
+    <div style="text-align:center;"><iframe src="https://www.youtube.com/embed/PZJGK45yBLw?modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&theme=light" width="440" height="440" frameborder="0" controls></iframe></div>
+    <p>
+        I eventually got the idea to send bits of information through the transmitter by incorporating a switching mechanism to pulse power delivery. With a filtering rectifier, I was able to get a decent square wave.
+    </p>
+    <div style="text-align:center;"><iframe src="https://www.youtube.com/embed/Aw8Thk29j9s?modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&theme=light" width="340" height="600" frameborder="0" controls></iframe></div>
+    <div class="innerfig" style="text-align:center;">
+        <img class="innerimg" src="circuit2.png">
+    </div>
+    <div class="innerfig" style="text-align:center;">
+        <img class="innerimg" src="circuit3.png">
+    </div>
+
+    <p>My final design was based off of a resonant sine-wave Royer oscillator variant, skewing away from Mazzili's toplogy. Rather than using benchtop components, parts were specifically chosen to maximize resonant frequency and tuned accordingly.</p>
+    <div class="innerfig" style="text-align:center;">
+        <img class="innerimg" src="circuit6.png">
+    </div>
+    <div class="innerfig" style="text-align:center;">
+        <img class="innerimg" src="circuit4.png">
+    </div>
+    <div class="innerfig" style="text-align:center;">
+        <img class="innerimg" src="circuit5.png">
+    </div>
+    <p>
+        If you're interested, you can check out the full technical specifics.
+    </p>
+    <style selector="resume">
+        .css-resume {
+            display: inline-block;
+            justify-content: center;
+            align-items: center;
+            -webkit-transition: all 0.15s ease-out;
+            transition: all 0.15s ease-out;
+            cursor: pointer;
+            -webkit-text-decoration: none;
+            text-decoration: none;
+            outline: none;
+            color: #000000;
+            color: #000000;
+            border: 3px solid#000000;
+            border-radius: 10px;
+            padding: 8px 16px;
+            font-size: 14px;
+            font-weight: 600;
+            -webkit-transition: background 0.2s ease;
+            transition: background 0.2s ease;
+        }
+
+        .css-resume:hover {
+            -webkit-text-decoration: underline;
+            text-decoration: underline;
+        }
+
+        .css-resume:focus {
+            box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.6);
+        }
+
+        .css-resume:disabled,
+        .css-resume:disabled:focus,
+        .css-resume:disabled:hover,
+        .css-resume[aria-disabled=true],
+        .css-resume[aria-disabled=true]:focus,
+        .css-resume[aria-disabled=true]:hover {
+            opacity: 0.4;
+            cursor: not-allowed;
+            -webkit-text-decoration: none;
+            text-decoration: none;
+        }
+
+        .css-resume:hover {
+            color: #FFF;
+            background: #000000;
+            -webkit-transition: background 0.2s ease;
+            transition: background 0.2s ease;
+            -webkit-text-decoration: none;
+            text-decoration: none;
+        }
+
+        .css-resume:active,
+        .css-resume:focus {
+            color: #FFF;
+            background: #000000;
+            -webkit-transition: background 0.2s ease;
+            transition: background 0.2s ease;
+            box-shadow: none !important;
+            border-radius: 10px;
+        }
+        </style>
+    <div><a href="https://drive.google.com/file/d/1veQQ8giH4RsUEh2cyOloDoOzS-SbPoTh/view?usp=sharing" target="_blank" class="css-resume">Paper Download ↓</a></div><br><br><br><br>
+    <h2>
+        My (questionable) Tesla coil.
+    </h2>
+    <p>Using a spare neon-sign transformer, a bank of high voltage capacitors from Mouser, and some copper refrigerator tubing, I managed to hack together this Tesla coil in a couple weeks. The result isn't pretty, but it was very fun to make.</p>
+    <div style="text-align:center;"><iframe src="https://www.youtube.com/embed/mGqvzrhciwQ?modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&theme=light" width="340" height="600" frameborder="0" controls></iframe></div>
+    <div class="innerfig" style="text-align:center;">
+        <img class="innerimg" src="teslacoil.png" style="width:100%">
+    </div>
+    <footer class="footer" style=margin-top:200px>
+      <div id="particles2"></div>
+      <div class="inner">
+              <small style=color:white>&copy 2021 by Ben Wolfson
+      </div>
+    </footer>
+    <script src="/assets/js/particles.min.js"></script>    <script src="/assets/js/main.min.js"></script>
+</div>
+
+
+    </body>
+</html>
