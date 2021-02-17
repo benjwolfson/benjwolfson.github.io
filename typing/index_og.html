@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta name="viewport"                content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="theme-color"             content="#000000">
+    <meta name="msapplication-TileColor" content="#000000">
+    
+    <!-- Preload the fonts -->
+    
+    <!-- Manifest site -->
+    <!-- <link rel="manifest" href="assets/favicons/site.webmanifest"> -->
+
+    <!-- Page Description -->
+    <meta name="description" content="Welcome! I'm Ben, a computer science undergrad at Georgia Tech. This is my personal site where I showcase the cool stuff I've worked on.">
+
+    <!-- Page Title -->
+    <title>Typing</title>
+        
+    <!-- Favicons Icons -->  
+    <link rel="apple-touch-icon" href="/assets/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon"             href="/assets/favicons/favicon-32x32.png"    sizes="32x32" type="image/png">
+    <link rel="icon"             href="/assets/favicons/favicon-16x16.png"    sizes="16x16" type="image/png">
+    <link rel="mask-icon"        href="/assets/favicons/safari-pinned-tab.svg" color="#23372d">
+    <link rel="shortcut icon"    href="/assets/favicons/favicon.ico">
+    
+
+    <!-- Stylesheet -->
+    <link href="/assets/css/description.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+</head>
+
+<body class="home">
+    <section class="intro">
+        <div id="particles" class="#site-header">
+            <div class="heading" onselectstart="return false">
+                <h3 onselectstart="return false">
+                    <a class="button" href="/">
+                        <span style=font-weight:600>HOME</span>
+                    </a>
+                </h3>
+            </div>
+        </div>
+    </section><main>
+    <!-- Writeup Block -->
+    <section class="bio" id="bio">
+        <h1 class="bio-title">
+            <span>...typing?</span><br>
+        </h1>
+            <div class="bio-content">
+                <p><span>Yes.<br></p>
+            </div>
+        <canvas id="chart1" height=150></canvas>
+        <canvas id="chart2" height=150></canvas>
+        <script>
+            $.getJSON("dates_months_speeds.json", function(data) {
+                    console.log( "success" );
+                    var dates = []
+                    var speeds = []
+                    var accs = []
+                    for (i = 0; i < Object.keys(data).length; i++) {
+                        dates.push(data[i]["date"])
+                        if (data[i]["speed"] == "") {
+                            speeds.push(Number.NaN)
+                            accs.push(Number.NaN)
+                        } else {
+                            speeds.push(Math.round(data[i]["speed"]))
+                            accs.push(data[i]["acc"] * 100)
+                        }
+                    }
+                    var ctx1 = document.getElementById('chart1').getContext('2d');
+
+                    var chart1 = new Chart(ctx1, {
+                    // The type of chart we want to create
+                    type: 'line',
+                    parsing: false,
+                    normalized: true,
+                
+                    // The data for our dataset
+                    data: {
+                        labels: dates,
+                        datasets: [{
+                            label: 'Avg. Words per Minute',
+                            borderColor: 'rgb(255, 99, 132)',
+                            borderWidth: 3.5,
+                            data: speeds,
+                            pointRadius: 0,
+                        }]
+                    },
+            
+                    // Configuration options go here
+                    options: {
+                        showToolTips: false,
+                        animation: {
+                            duration: 1500
+                        },
+                        spanGaps: true,
+                        responsive: true,
+                        scales: {
+                            xAxes: [{
+                                setTickMaxLimit: 10,
+                                ticks: {
+                                    callback: function(value) {
+                                        return new Date(value).toLocaleString('en-US', {month: 'short', year: 'numeric' });
+                                    }
+                                }
+                            }],
+                            yAxes: [{
+                                ticks: {
+                                    callback: function(value) {
+                                        return new String(value + "    ");
+                                    }
+                                }
+                            }]
+                        },
+                        elements: {
+                            line: {
+                                borderDash: []
+                            }
+                        }
+                    }
+                    });
+
+                    var ctx2 = document.getElementById('chart2').getContext('2d');
+                    var chart2 = new Chart(ctx2, {
+                    // The type of chart we want to create
+                    type: 'line',
+                    parsing: false,
+                    normalized: true,
+                
+                    // The data for our dataset
+                    data: {
+                        labels: dates,
+                        datasets: [{
+                            label: 'Avg. Accuracy',
+                            borderColor: 'rgb(255, 99, 132)',
+                            borderWidth: 3.5,
+                            data: accs,
+                            pointRadius: 0,
+                        }]
+                    },
+            
+                    // Configuration options go here
+                    options: {
+                        hover: false,
+                        animation: {
+                            duration: 1500
+                        },
+
+                        spanGaps: true,
+                        scales: {
+                            xAxes: [{
+                                ticks: {
+                                    callback: function(value) {
+                                        return new Date(value).toLocaleString('en-US', {month: 'short', year: 'numeric' });
+                                    }
+                                }
+                            }],
+                            yAxes: [{
+                                ticks: {
+                                    callback: function(value) {
+                                        return new String(value + "%");
+                                    }
+                                }
+                            }]  
+                        },
+                        elements: {
+                            line: {
+                                borderDash: []
+                            }
+                        }
+                    }
+                    });
+
+            });
+        </script>
+    </section>
+    </main>    <footer class="footer">
+        <div id="particles2"></div>
+        <div class="inner">
+                <img src="/assets/icons/benjwolfson-logo-clear.png" alt="Benjwolfson Logo" style="width: 150px;height:150px"><br><br>
+                <small style=color:white>&copy 2021 by Ben Wolfson
+        </div>
+    </footer>
+    <script src="/assets/js/particles.min.js"></script>    <script src="/assets/js/main.min.js"></script>
+</html>
